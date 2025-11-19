@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Optimization -->
+  <title>Customer Reviews - Cane Villa Cabs Johannesburg | Testimonials</title>
+  <meta name="description" content="Read customer reviews and testimonials for Cane Villa Cabs. See why we're Johannesburg's most reliable transportation service.">
+  <meta name="keywords" content="cane villa cabs reviews, customer testimonials, Johannesburg taxi reviews, transportation service ratings">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Customer Reviews</h1>
+    <p>We value your feedback! Please rate our service and share your experience.</p>
+  </header>
+
+  <nav>
+    <div class="nav-container">
+      <div class="logo">Cane Villa</div>
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="review.html" class="active">Reviews</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="content-box">
+      <!-- Review Statistics -->
+      <div class="review-stats">
+        <div class="overall-rating">
+          <div class="rating-score">4.8</div>
+          <div class="rating-stars">★★★★★</div>
+          <div class="rating-count">Based on 127 reviews</div>
+        </div>
+        
+        <div class="rating-breakdown">
+          <div class="rating-bar">
+            <span>5 stars</span>
+            <div class="bar-container">
+              <div class="bar-fill" data-percentage="78"></div>
+            </div>
+            <span>78%</span>
+          </div>
+          <div class="rating-bar">
+            <span>4 stars</span>
+            <div class="bar-container">
+              <div class="bar-fill" data-percentage="15"></div>
+            </div>
+            <span>15%</span>
+          </div>
+          <div class="rating-bar">
+            <span>3 stars</span>
+            <div class="bar-container">
+              <div class="bar-fill" data-percentage="5"></div>
+            </div>
+            <span>5%</span>
+          </div>
+          <div class="rating-bar">
+            <span>2 stars</span>
+            <div class="bar-container">
+              <div class="bar-fill" data-percentage="1"></div>
+            </div>
+            <span>1%</span>
+          </div>
+          <div class="rating-bar">
+            <span>1 star</span>
+            <div class="bar-container">
+              <div class="bar-fill" data-percentage="1"></div>
+            </div>
+            <span>1%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review Form -->
+      <h2>Leave a Review</h2>
+      <form id="review-form" class="review-form">
+        <div class="form-group">
+          <label>Rate Your Experience: *</label>
+          <div class="star-rating">
+            <input type="radio" id="star5" name="rating" value="5">
+            <label for="star5" class="star">★</label>
+            <input type="radio" id="star4" name="rating" value="4">
+            <label for="star4" class="star">★</label>
+            <input type="radio" id="star3" name="rating" value="3">
+            <label for="star3" class="star">★</label>
+            <input type="radio" id="star2" name="rating" value="2">
+            <label for="star2" class="star">★</label>
+            <input type="radio" id="star1" name="rating" value="1">
+            <label for="star1" class="star">★</label>
+          </div>
+          <span class="error-message" id="rating-error"></span>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="review-name">Your Name: *</label>
+            <input type="text" id="review-name" placeholder="Jane Smith" required>
+            <span class="error-message" id="name-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="service-used">Service Used: *</label>
+            <select id="service-used" required>
+              <option value="">Select service</option>
+              <option value="airport">Airport Transfer</option>
+              <option value="corporate">Corporate Transport</option>
+              <option value="tour">City Tour</option>
+              <option value="event">Special Event</option>
+              <option value="luxury">Luxury Ride</option>
+              <option value="other">Other</option>
+            </select>
+            <span class="error-message" id="service-error"></span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="review-title">Review Title:</label>
+          <input type="text" id="review-title" placeholder="Great service!">
+        </div>
+
+        <div class="form-group">
+          <label for="review">Your Review: *</label>
+          <textarea id="review" rows="5" placeholder="Share your experience with us..." required></textarea>
+          <div class="char-counter">
+            <span id="char-count">0</span>/500 characters
+          </div>
+          <span class="error-message" id="review-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="recommend" checked>
+            <span class="checkmark"></span>
+            I would recommend Cane Villa Cabs to others
+          </label>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" id="submit-review" class="submit-button">
+            <span class="btn-text">Submit Review</span>
+            <span class="btn-loading" style="display: none;">Submitting...</span>
+          </button>
+        </div>
+      </form>
+
+      <!-- Reviews Filter and Sort -->
+      <div class="reviews-controls">
+        <div class="filter-controls">
+          <label>Filter by:</label>
+          <select id="rating-filter">
+            <option value="all">All Ratings</option>
+            <option value="5">5 Stars</option>
+            <option value="4">4 Stars</option>
+            <option value="3">3 Stars</option>
+            <option value="2">2 Stars</option>
+            <option value="1">1 Star</option>
+          </select>
+          
+          <select id="service-filter">
+            <option value="all">All Services</option>
+            <option value="airport">Airport Transfer</option>
+            <option value="corporate">Corporate Transport</option>
+            <option value="tour">City Tour</option>
+            <option value="event">Special Event</option>
+          </select>
+        </div>
+        
+        <div class="sort-controls">
+          <label>Sort by:</label>
+          <select id="sort-reviews">
+            <option value="newest">Newest First</option>
+            <option value="oldest">Oldest First</option>
+            <option value="highest">Highest Rated</option>
+            <option value="lowest">Lowest Rated</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Reviews Container -->
+      <div class="reviews-container" id="reviews-container">
+        <h2>What Our Customers Say</h2>
+        
+        <div class="review" data-rating="5" data-service="airport" data-date="2024-01-15">
+          <div class="review-header">
+            <div class="reviewer-info">
+              <strong>Sarah Johnson</strong>
+              <div class="review-rating">★★★★★</div>
+            </div>
+            <div class="review-meta">
+              <span class="service-tag">Airport Transfer</span>
+              <span class="review-date">2 weeks ago</span>
+            </div>
+          </div>
+          <h4 class="review-title">Excellent Service!</h4>
+          <p>Excellent service! The driver was punctual, professional, and the vehicle was spotless. Will definitely use Cane Villa again for all my airport transfers. The flight tracking feature is amazing!</p>
+          <div class="review-helpful">
+            <button class="helpful-btn" data-review="1">Helpful (24)</button>
+            <button class="reply-btn">Reply</button>
+          </div>
+        </div>
+
+        <div class="review" data-rating="4" data-service="corporate" data-date="2024-01-10">
+          <div class="review-header">
+            <div class="reviewer-info">
+              <strong>Michael Brown</strong>
+              <div class="review-rating">★★★★☆</div>
+            </div>
+            <div class="review-meta">
+              <span class="service-tag">Corporate Transport</span>
+              <span class="review-date">1 month ago</span>
+            </div>
+          </div>
+          <h4 class="review-title">Reliable Corporate Service</h4>
+          <p>Reliable service for our business clients. The drivers are always professional and the vehicles are comfortable. Highly recommended for corporate travel. Minor issue with one pickup timing, but otherwise excellent.</p>
+          <div class="review-helpful">
+            <button class="helpful-btn" data-review="2">Helpful (18)</button>
+            <button class="reply-btn">Reply</button>
+          </div>
+        </div>
+
+        <div class="review" data-rating="5" data-service="tour" data-date="2024-01-05">
+          <div class="review-header">
+            <div class="reviewer-info">
+              <strong>Lisa Williams</strong>
+              <div class="review-rating">★★★★★</div>
+            </div>
+            <div class="review-meta">
+              <span class="service-tag">City Tour</span>
+              <span class="review-date">3 weeks ago</span>
+            </div>
+          </div>
+          <h4 class="review-title">Wonderful City Tour</h4>
+          <p>We had a wonderful city tour with Cane Villa. The driver was knowledgeable and took us to all the best spots. The Mercedes van was incredibly comfortable for our group of 6. Great value for money!</p>
+          <div class="review-helpful">
+            <button class="helpful-btn" data-review="3">Helpful (32)</button>
+            <button class="reply-btn">Reply</button>
+          </div>
+        </div>
+
+        <div class="review" data-rating="5" data-service="event" data-date="2023-12-20">
+          <div class="review-header">
+            <div class="reviewer-info">
+              <strong>David Thompson</strong>
+              <div class="review-rating">★★★★★</div>
+            </div>
+            <div class="review-meta">
+              <span class="service-tag">Wedding Transport</span>
+              <span class="review-date">2 months ago</span>
+            </div>
+          </div>
+          <h4 class="review-title">Perfect Wedding Service</h4>
+          <p>Perfect service for our wedding day! The luxury Mercedes made us feel special, and the driver was exceptionally courteous. Thank you for making our day even more memorable. Highly recommended for special events!</p>
+          <div class="review-helpful">
+            <button class="helpful-btn" data-review="4">Helpful (41)</button>
+            <button class="reply-btn">Reply</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Load More Reviews -->
+      <div class="load-more-container">
+        <button id="load-more-reviews" class="load-more-btn">Load More Reviews</button>
+      </div>
+
+      <!-- Review Success Modal -->
+      <div id="review-success-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <div class="modal-icon">⭐</div>
+          <h3>Thank You for Your Review!</h3>
+          <p>Your feedback helps us improve our services. We appreciate you taking the time to share your experience.</p>
+          <button id="review-modal-ok" class="modal-button">OK</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <!-- Footer content -->
+  </footer>
+
+  <script>
+    // Reviews Page Specific JavaScript
+    document.addEventListener('DOMContentLoaded', function() {
+      const reviewForm = document.getElementById('review-form');
+      const successModal = document.getElementById('review-success-modal');
+      const charCount = document.getElementById('char-count');
+      const reviewInput = document.getElementById('review');
+      const stars = document.querySelectorAll('.star-rating .star');
+      
+      // Star rating interaction
+      stars.forEach(star => {
+        star.addEventListener('click', function() {
+          const rating = this.previousElementSibling.value;
+          updateStarRating(rating);
+        });
+        
+        star.addEventListener('mouseover', function() {
+          const rating = this.previousElementSibling.value;
+          highlightStars(rating);
+        });
+      });
+      
+      document.querySelector('.star-rating').addEventListener('mouseleave', function() {
+        const checkedStar = document.querySelector('.star-rating input:checked');
+        if (checkedStar) {
+          highlightStars(checkedStar.value);
+        } else {
+          resetStars();
+        }
+      });
+      
+      function updateStarRating(rating) {
+        document.querySelectorAll('.star-rating input').forEach(input => {
+          input.checked = input.value <= rating;
+        });
+        highlightStars(rating);
+      }
+      
+      function highlightStars(rating) {
+        stars.forEach(star => {
+          star.style.color = star.previousElementSibling.value <= rating ? '#ffc107' : '#ddd';
+        });
+      }
+      
+      function resetStars() {
+        stars.forEach(star => {
+          star.style.color = '#ddd';
+        });
+      }
+      
+      // Character counter
+      if (reviewInput && charCount) {
+        reviewInput.addEventListener('input', function() {
+          charCount.textContent = this.value.length;
+          if (this.value.length > 500) {
+            this.value = this.value.substring(0, 500);
+            charCount.textContent = '500';
+          }
+        });
+      }
+      
+      // Review form validation and submission
+      if (reviewForm) {
+        reviewForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          if (validateReviewForm()) {
+            const submitBtn = document.getElementById('submit-review');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const btnLoading = submitBtn.querySelector('.btn-loading');
+            
+            // Show loading state
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'inline';
+            submitBtn.disabled = true;
+            
+            // Simulate form submission
+            setTimeout(() => {
+              // Add new review to the page
+              addNewReview();
+              
+              // Show success modal
+              successModal.style.display = 'block';
+              
+              // Reset form
+             

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Optimization -->
+  <title>Cane Villa Cabs And Tours - Premium Transportation Services Johannesburg</title>
+  <meta name="description" content="Cane Villa Cabs offers reliable 24/7 transportation services in Johannesburg. Airport transfers, corporate transport, city tours, and luxury rides at competitive prices.">
+  <meta name="keywords" content="Johannesburg cabs, airport transfers, corporate transport, luxury rides, taxi service Johannesburg, reliable transportation">
+  <meta name="author" content="Cane Villa Cabs And Tours">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Cane Villa Cabs And Tours</h1>
+    <p>Contact us anytime — we're here to get you moving!</p>
+  </header>
+
+  <nav>
+    <div class="nav-container">
+      <div class="logo">Cane Villa</div>
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="review.html">Reviews</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Interactive Hero Section -->
+    <section class="hero">
+      <div class="hero-slider">
+        <div class="slide active">
+          <img src="images/Mercedes-V300d2.jpeg" alt="Luxury Mercedes Cab - Cane Villa Cabs Johannesburg">
+        </div>
+        <div class="slide">
+          <img src="images/087-mercedes-v-class-boot-space-tailgate.webp" alt="Spacious Mercedes V-Class Boot">
+        </div>
+        <div class="slide">
+          <img src="images/084-mercedes-v-class-rear-seats.webp" alt="Comfortable Rear Seats">
+        </div>
+      </div>
+      <div class="hero-text">
+        <h2>Your journey is our mission</h2>
+        <p>Safe, Swift and Secure</p>
+        <a href="services.html" class="cta-button">Book Now</a>
+        <div class="slider-controls">
+          <button class="slider-prev">❮</button>
+          <button class="slider-next">❯</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Booking Widget -->
+    <section class="content-box">
+      <h2>Quick Booking</h2>
+      <div class="quick-booking">
+        <div class="form-group">
+          <label for="pickup-location">Pickup Location:</label>
+          <input type="text" id="pickup-location" placeholder="Enter pickup address">
+        </div>
+        <div class="form-group">
+          <label for="destination">Destination:</label>
+          <input type="text" id="destination" placeholder="Enter destination">
+        </div>
+        <div class="form-group">
+          <label for="booking-date">Date:</label>
+          <input type="date" id="booking-date">
+        </div>
+        <div class="form-group">
+          <label for="booking-time">Time:</label>
+          <input type="time" id="booking-time">
+        </div>
+        <button id="quick-book-btn" class="cta-button">Get Quote</button>
+        <div id="booking-quote" class="booking-quote"></div>
+      </div>
+    </section>
+
+    <!-- Services Overview with Animation -->
+    <section class="features animated-features">
+      <div class="feature" data-aos="fade-up">
+        <div class="feature-icon">🕒</div>
+        <h3>24/7 Service</h3>
+        <p>We're available round the clock for your convenience</p>
+      </div>
+      <div class="feature" data-aos="fade-up" data-aos-delay="100">
+        <div class="feature-icon">🚗</div>
+        <h3>Luxury Vehicles</h3>
+        <p>Travel in comfort with our premium fleet</p>
+      </div>
+      <div class="feature" data-aos="fade-up" data-aos-delay="200">
+        <div class="feature-icon">👨‍✈️</div>
+        <h3>Professional Drivers</h3>
+        <p>Experienced and courteous chauffeurs</p>
+      </div>
+    </section>
+
+    <!-- Live Map Section -->
+    <section class="content-box">
+      <h2>Service Area</h2>
+      <div id="service-map" class="service-map">
+        <div class="map-placeholder">
+          <p>Interactive Map Loading...</p>
+          <p>Johannesburg and surrounding areas</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Carousel -->
+    <section class="content-box">
+      <h2>What Our Customers Say</h2>
+      <div class="testimonials-carousel">
+        <div class="testimonial active">
+          <p>"Excellent service! The driver was punctual and professional."</p>
+          <span>- Sarah Johnson</span>
+        </div>
+        <div class="testimonial">
+          <p>"Reliable service for our business clients. Highly recommended!"</p>
+          <span>- Michael Brown</span>
+        </div>
+        <div class="testimonial">
+          <p>"Comfortable vehicles and knowledgeable drivers. Perfect for tours!"</p>
+          <span>- Lisa Williams</span>
+        </div>
+        <div class="carousel-controls">
+          <button class="carousel-prev">❮</button>
+          <button class="carousel-next">❯</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer remains the same as previous -->
+  <footer>
+    <!-- Footer content -->
+  </footer>
+
+  <script>
+    // Home Page Specific JavaScript
+    document.addEventListener('DOMContentLoaded', function() {
+      // Hero Slider
+      const slides = document.querySelectorAll('.slide');
+      const prevBtn = document.querySelector('.slider-prev');
+      const nextBtn = document.querySelector('.slider-next');
+      let currentSlide = 0;
+
+      function showSlide(n) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        currentSlide = (n + slides.length) % slides.length;
+        slides[currentSlide].classList.add('active');
+      }
+
+      if (prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
+        nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
+        
+        // Auto slide every 5 seconds
+        setInterval(() => showSlide(currentSlide + 1), 5000);
+      }
+
+      // Quick Booking Functionality
+      const quickBookBtn = document.getElementById('quick-book-btn');
+      if (quickBookBtn) {
+        quickBookBtn.addEventListener('click', function() {
+          const pickup = document.getElementById('pickup-location').value;
+          const destination = document.getElementById('destination').value;
+          
+          if (pickup && destination) {
+            // Simulate price calculation
+            const basePrice = 150;
+            const quote = basePrice + Math.floor(Math.random() * 100);
+            document.getElementById('booking-quote').innerHTML = 
+              `<p>Estimated Price: R${quote}</p><button onclick="window.location.href='services.html'">Book Now</button>`;
+          } else {
+            alert('Please enter both pickup and destination locations');
+          }
+        });
+      }
+
+      // Testimonials Carousel
+      const testimonials = document.querySelectorAll('.testimonial');
+      const carouselPrev = document.querySelector('.carousel-prev');
+      const carouselNext = document.querySelector('.carousel-next');
+      let currentTestimonial = 0;
+
+      function showTestimonial(n) {
+        testimonials.forEach(testimonial => testimonial.classList.remove('active'));
+        currentTestimonial = (n + testimonials.length) % testimonials.length;
+        testimonials[currentTestimonial].classList.add('active');
+      }
+
+      if (carouselPrev && carouselNext) {
+        carouselPrev.addEventListener('click', () => showTestimonial(currentTestimonial - 1));
+        carouselNext.addEventListener('click', () => showTestimonial(currentTestimonial + 1));
+      }
+
+      // Scroll Animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, observerOptions);
+
+      // Observe animated elements
+      document.querySelectorAll('.feature').forEach(feature => {
+        feature.style.opacity = '0';
+        feature.style.transform = 'translateY(20px)';
+        feature.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(feature);
+      });
+    });
+  </script>
+
+  <style>
+    /* Home Page Specific Styles */
+    .hero-slider {
+      position: relative;
+      height: 400px;
+      overflow: hidden;
+    }
+    
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    
+    .slide.active {
+      opacity: 1;
+    }
+    
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .slider-controls {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+    }
+    
+    .slider-controls button {
+      background: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      margin: 0 5px;
+    }
+    
+    .quick-booking {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin: 20px 0;
+    }
+    
+    .booking-quote {
+      grid-column: 1 / -1;
+      padding: 15px;
+      background: #f8f9fa;
+      border-radius: 5px;
+      text-align: center;
+    }
+    
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+    
+    .animated-features .feature {
+      transition: all 0.6s ease;
+    }
+    
+    .service-map {
+      height: 300px;
+      background: #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+    }
+    
+    .testimonials-carousel {
+      position: relative;
+      min-height: 120px;
+    }
+    
+    .testimonial {
+      display: none;
+      text-align: center;
+      padding: 20px;
+    }
+    
+    .testimonial.active {
+      display: block;
+    }
+    
+    .carousel-controls {
+      text-align: center;
+      margin-top: 15px;
+    }
+    
+    .carousel-controls button {
+      background: #0077cc;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      margin: 0 5px;
+    }
+  </style>
+</body>
+</html>

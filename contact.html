@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Optimization -->
+  <title>Contact Cane Villa Cabs - 24/7 Transportation Services Johannesburg</title>
+  <meta name="description" content="Contact Cane Villa Cabs for reliable 24/7 transportation services in Johannesburg. Phone, email, and online booking available.">
+  <meta name="keywords" content="contact cane villa cabs, Johannesburg taxi contact, book ride online, transportation services contact">
+  
+  <!-- Google Maps API -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0lC0d3hJcH6gKcGgQk8wQk8wQk8wQk8wQ&loading=async&callback=initContactMap" async defer></script>
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Contact Us</h1>
+    <p>We're available 24/7 for your convenience</p>
+  </header>
+
+  <nav>
+    <div class="nav-container">
+      <div class="logo">Cane Villa</div>
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html" class="active">Contact Us</a></li>
+        <li><a href="review.html">Reviews</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="content-box">
+      <h2>Get In Touch</h2>
+      <p>Have questions or ready to book? Reach out to us using any of the methods below. Our team is always ready to assist you.</p>
+      
+      <!-- Contact Information with Interactive Map -->
+      <div class="contact-info-grid">
+        <div class="contact-methods">
+          <div class="contact-method">
+            <div class="contact-icon">📞</div>
+            <h3>Phone</h3>
+            <p>+27 69 925 0979</p>
+            <p>Available 24/7</p>
+            <button class="call-btn" data-phone="+27699250979">Call Now</button>
+          </div>
+          
+          <div class="contact-method">
+            <div class="contact-icon">✉️</div>
+            <h3>Email</h3>
+            <p>info@canevilla.co.za</p>
+            <p>Response within 2 hours</p>
+            <button class="email-btn" data-email="info@canevilla.co.za">Send Email</button>
+          </div>
+          
+          <div class="contact-method">
+            <div class="contact-icon">🏢</div>
+            <h3>Office</h3>
+            <p>123 Transport Street</p>
+            <p>Johannesburg, 2000</p>
+            <button class="directions-btn" data-address="123 Transport Street, Johannesburg, 2000">Get Directions</button>
+          </div>
+          
+          <div class="contact-method">
+            <div class="contact-icon">🕒</div>
+            <h3>Business Hours</h3>
+            <p>Monday - Sunday</p>
+            <p>24 hours / 7 days</p>
+          </div>
+        </div>
+
+        <!-- Interactive Map -->
+        <div class="map-container">
+          <h3>Find Us</h3>
+          <div id="contact-map" class="contact-map"></div>
+          <div class="map-controls">
+            <button id="contact-locate-me" class="map-control-btn">📍 Locate Me</button>
+            <button id="contact-get-directions" class="map-control-btn">🚗 Get Directions</button>
+          </div>
+          <div class="map-info">
+            <p><strong>Office Location:</strong> 123 Transport Street, Johannesburg, 2000</p>
+            <p><strong>Parking:</strong> Free parking available onsite</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form with Enhanced Validation -->
+      <h2>Send Us a Message</h2>
+      <form id="contact-form" class="enhanced-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your Name: *</label>
+            <input type="text" id="name" placeholder="Mthokozisi" required>
+            <span class="error-message" id="name-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Your Email: *</label>
+            <input type="email" id="email" placeholder="st10492559@rcconnect.edu.za" required>
+            <span class="error-message" id="email-error"></span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone Number: *</label>
+            <input type="tel" id="phone" placeholder="+27 69 925 0979" required>
+            <span class="error-message" id="phone-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="service">Service Interested In:</label>
+            <select id="service">
+              <option value="">Select a service</option>
+              <option value="airport">Airport Transfer</option>
+              <option value="corporate">Corporate Transport</option>
+              <option value="tour">City Tour</option>
+              <option value="event">Special Event</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Subject: *</label>
+          <input type="text" id="subject" placeholder="Booking inquiry" required>
+          <span class="error-message" id="subject-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message: *</label>
+          <textarea id="message" rows="5" placeholder="Write your message here..." required></textarea>
+          <div class="char-counter">
+            <span id="char-count">0</span>/500 characters
+          </div>
+          <span class="error-message" id="message-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="newsletter" checked>
+            <span class="checkmark"></span>
+            Subscribe to our newsletter for updates and special offers
+          </label>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" id="submit-btn" class="submit-button">
+            <span class="btn-text">Send Message</span>
+            <span class="btn-loading" style="display: none;">Sending...</span>
+          </button>
+          <button type="reset" class="reset-button">Clear Form</button>
+        </div>
+      </form>
+
+      <!-- Success Modal -->
+      <div id="success-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <div class="modal-icon">✅</div>
+          <h3>Message Sent Successfully!</h3>
+          <p>Thank you for contacting Cane Villa Cabs. We'll get back to you within 2 hours.</p>
+          <button id="modal-ok" class="modal-button">OK</button>
+        </div>
+      </div>
+
+      <!-- Emergency Contact Section -->
+      <div class="emergency-contact">
+        <h3>🚨 Emergency Contact</h3>
+        <p>For urgent transportation needs outside business hours</p>
+        <div class="emergency-number">
+          <span>+27 69 925 0979</span>
+          <button class="emergency-call">Emergency Call</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <!-- Footer content -->
+    <div class="footer-content">
+      <div class="footer-section">
+        <div class="footer-logo">
+          <h3>Cane Villa Cabs</h3>
+          <p>Your journey is our mission</p>
+        </div>
+        <p class="footer-description">Providing safe, comfortable, and reliable transportation services since 2012.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="review.html">Reviews</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Info</h3>
+        <div class="contact-info">
+          <div class="contact-item">
+            <span>📞 +27 69 925 0979</span>
+          </div>
+          <div class="contact-item">
+            <span>✉️ info@canevilla.co.za</span>
+          </div>
+          <div class="contact-item">
+            <span>🏢 123 Transport St, Johannesburg</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Cane Villa Cabs And Tours. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Contact Page Specific JavaScript
+    document.addEventListener('DOMContentLoaded', function() {
+      const contactForm = document.getElementById('contact-form');
+      const successModal = document.getElementById('success-modal');
+      const charCount = document.getElementById('char-count');
+      const messageInput = document.getElementById('message');
+      
+      // Character counter for message
+      if (messageInput && charCount) {
+        messageInput.addEventListener('input', function() {
+          charCount.textContent = this.value.length;
+          if (this.value.length > 500) {
+            this.value = this.value.substring(0, 500);
+            charCount.textContent = '500';
+          }
+        });
+      }
+      
+      // Contact method buttons
+      document.querySelectorAll('.call-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const phone = this.getAttribute('data-phone');
+          if (confirm(`Call ${phone}?`)) {
+            window.location.href = `tel:${phone}`;
+          }
+        });
+      });
+      
+      document.querySelectorAll('.email-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const email = this.getAttribute('data-email');
+          window.location.href = `mailto:${email}?subject=Inquiry%20from%20Website`;
+        });
+      });
+      
+      document.querySelectorAll('.directions-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const address = encodeURIComponent(this.getAttribute('data-address'));
+          window.open(`https://www.google.com/maps/search/?api=1&query=${address}`, '_blank');
+        });
+      });
+      
+      // Map buttons
+      document.getElementById('contact-get-directions')?.addEventListener('click', function() {
+        window.open('https://www.google.com/maps/dir//123+Transport+Street+Johannesburg+2000', '_blank');
+      });
+      
+      // Emergency call button
+      document.querySelector('.emergency-call')?.addEventListener('click', function() {
+        if (confirm('Call emergency line: +27 69 925 0979?')) {
+          window.location.href = 'tel:+27699250979';
+        }
+      });
+      
+      // Enhanced form validation
+      if (contactForm) {
+        const fields = {
+          name: { element: document.getElementById('name'), error: document.getElementById('name-error') },
+          email: { element: document.getElementById('email'), error: document.getElementById('email-error') },
+          phone: { element: document.getElementById('phone'), error: document.getElementById('phone-error') },
+          subject: { element: document.getElementById('subject'), error: document.getElementById('subject-error') },
+          message: { element: document.getElementById('message'), error: document.getElementById('message-error') }
+        };
+        
+        // Real-time validation
+        Object.keys(fields).forEach(field => {
+          if (fields[field].element) {
+            fields[field].element.addEventListener('blur', function() {
+              validateField(field);
+            });
+            
+            fields[field].element.addEventListener('input', function() {
+              clearError(field);
+            });
+          }
+        });
+        
+        function validateField(field) {
+          const value = fields[field].element.value.trim();
+          let isValid = true;
+          let errorMessage = '';
+          
+          switch(field) {
+            case 'name':
+              if (value.length < 2) {
+                isValid = false;
+                errorMessage = 'Name must be at least 2 characters long';
+              }
+              break;
+              
+            case 'email':
+              const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+              if (!emailRegex.test(value)) {
+                isValid = false;
+                errorMessage = 'Please enter a valid email address';
+              }
+              break;
+              
+            case 'phone':
+              const phoneRegex = /^[\+]?[0-9\s\-\(\)]{10,}$/;
+              if (!phoneRegex.test(value)) {
+                isValid = false;
+                errorMessage = 'Please enter a valid phone number';
+              }
+              break;
+              
+            case 'subject':
+              if (value.length < 5) {
+                isValid = false;
+                errorMessage = 'Subject must be at least 5 characters long';
+              }
+              break;
+              
+            case 'message':
+              if (value.length < 10) {
+                isValid = false;
+                errorMessage = 'Message must be at least 10 characters long';
+              }
+              break;
+          }
+          
+          if (!isValid) {
+            showError(field, errorMessage);
+          } else {
+            clearError(field);
+          }
+          
+          return isValid;
+        }
+        
+        function showError(field, message) {
+          if (fields[field].error) {
+            fields[field].error.textContent = message;
+          }
+          if (fields[field].element) {
+            fields[field].element.classList.add('error');
+          }
+        }
+        
+        function clearError(field) {
+          if (fields[field].error) {
+            fields[field].error.textContent = '';
+          }
+          if (fields[field].element) {
+            fields[field].element.classList.remove('error');
+          }
+        }
+        
+        function validateForm() {
+          let isValid = true;
+          Object.keys(fields).forEach(field => {
+            if (!validateField(field)) {
+              isValid = false;
+            }
+          });
+          return isValid;
+        }
+        
+        contactForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          if (validateForm()) {
+            const submitBtn = document.getElementById('submit-btn');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const btnLoading = submitBtn.querySelector('.btn-loading');
+            
+            // Show loading state
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'inline';
+            submitBtn.disabled = true;
+            
+            // Simulate form submission
+            setTimeout(() => {
+              // Show success modal
+              if (successModal) {
+                successModal.style.display = 'block';
+              }
+              
+              // Reset form
+              contactForm.reset();
+              if (charCount) charCount.textContent = '0';
+              
+              // Reset button state
+              btnText.style.display = 'inline';
+              btnLoading.style.display = 'none';
+              submitBtn.disabled = false;
+            }, 2000);
+          }
+        });
+      }
+      
+      // Modal functionality
+      const closeModal = document.querySelector('.close-modal');
+      const modalOk = document.getElementById('modal-ok');
+      
+      if (closeModal) {
+        closeModal.addEventListener('click', function() {
+          if (successModal) {
+            successModal.style.display = 'none';
+          }
+        });
+      }
+      
+      if (modalOk) {
+        modalOk.addEventListener('click', function() {
+          if (successModal) {
+            successModal.style.display = 'none';
+          }
+        });
+      }
+      
+      // Close modal when clicking outside
+      window.addEventListener('click', function(e) {
+        if (e.target === successModal) {
+          successModal.style.display = 'none';
+        }
+      });
+      
+      // Form reset handler
+      if (contactForm) {
+        contactForm.addEventListener('reset', function() {
+          // Clear all errors
+          Object.keys(fields).forEach(field => {
+            clearError(field);
+          });
+          if (charCount) charCount.textContent = '0';
+        });
+      }
+    });
+
+    // Google Maps for Contact Page
+    function initContactMap() {
+      // Johannesburg coordinates
+      const officeLocation = { lat: -26.2041, lng: 28.0473 };
+      
+      // Create map
+      const map = new google.maps.Map(document.getElementById('contact-map'), {
+        zoom: 15,
+        center: officeLocation,
+        styles: [
+          {
+            "featureType": "all",
+            "elementType": "geometry",
+            "stylers": [{ "color": "#f5f5f5" }]
+          },
+          {
+            "featureType": "water",
+            "elementType": "geometry",
+            "stylers": [{ "color": "#c9c9c9" }]
+          }
+        ],
+        mapTypeControl: false,
+        streetViewControl: true,
+        fullscreenControl: true
+      });
+
+      // Add office marker
+      const officeMarker = new google.maps.Marker({
+        position: officeLocation,
+        map: map,
+        title: 'Cane Villa Cabs Office',
+        animation: google.maps.Animation.DROP,
+        icon: {
+          url: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAzMCAzMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE1IDI4LjVDMTUgMjguNSAzIDIwIDMgMTVDMyA4LjM2MzcgOC4zNjM3IDMgMTUgM1MyNyA4LjM2MzcgMjcgMTVDMjcgMjAgMTUgMjguNSAxNSAyOC41WiIgZmlsbD0iIzAwNzdjYyIvPgo8Y2lyY2xlIGN4PSIxNSIgY3k9IjE1IiByPSI0IiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4=',
+          scaledSize: new google.maps.Size(40, 40),
+          anchor: new google.maps.Point(20, 40)
+        }
+      });
+
+      // Info window for office
+      const infoWindow = new google.maps.InfoWindow({
+        content: `
+          <div class="map-info-window">
+            <h3>🏢 Cane Villa Cabs</h3>
+            <p><strong>Main Office</strong></p>
+            <p>123 Transport Street</p>
+            <p>Johannesburg, 2000</p>
+            <p>📞 +27 69 925 0979</p>
+            <p>✉️ info@canevilla.co.za</p>
+            <button onclick="window.open('https://maps.google.com/?q=123+Transport+Street+Johannesburg+2000', '_blank')" 
+                    style="background: #0077cc; color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer; margin-top: 5px;">
+              Get Directions
+            </button>
+          </div>
+        `
+      });
+
+      // Open info window on marker click
+      officeMarker.addListener('click', () => {
+        infoWindow.open(map, officeMarker);
+      });
+
+      // Auto-open info window
+      setTimeout(() => {
+        infoWindow.open(map, officeMarker);
+      }, 1000);
+
+      // Locate Me functionality
+      const locateMeBtn = document.getElementById('contact-locate-me');
+      if (locateMeBtn) {
+        locateMeBtn.addEventListener('click', function() {
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+              function(position) {
+                const userLocation = {
+                  lat: position.coords.latitude,
+                  lng: position.coords.longitude
+                };
+                
+                // Add user location marker
+                new google.maps.Marker({
+                  position: userLocation,
+                  map: map,
+                  title: 'Your Location',
+                  icon: {
+                    url: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiIGZpbGw9IiNmZjZmNmIiIHN0cm9rZT0iI2RjMzU0NSIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjQiIGZpbGw9IiNkYzM1NDUiLz4KPC9zdmc+',
+                    scaledSize: new google.maps.Size(30, 30)
+                  }
+                });
+                
+                // Center map between user and office
+                const bounds = new google.maps.LatLngBounds();
+                bounds.extend(userLocation);
+                bounds.extend(officeLocation);
+                map.fitBounds(bounds);
+              },
+              function(error) {
+                alert('Unable to get your location. Please ensure location services are enabled.');
+              }
+            );
+          } else {
+            alert('Geolocation is not supported by this browser.');
+          }
+        });
+      }
+    }
+
+    // Fallback if Google Maps fails to load
+    window.gm_authFailure = function() {
+      const mapContainer = document.getElementById('contact-map');
+      if (mapContainer) {
+        mapContainer.innerHTML = `
+          <div class="map-fallback" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+            <h3 style="color: #0077cc; margin-bottom: 15px;">📍 Office Location</h3>
+            <p style="margin: 5px 0;"><strong>Address:</strong> 123 Transport Street, Johannesburg, 2000</p>
+            <p style="margin: 5px 0;"><strong>Phone:</strong> +27 69 925 0979</p>
+            <p style="margin: 5px 0;"><strong>Email:</strong> info@canevilla.co.za</p>
+            <div style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=123+Transport+Street+Johannesburg+2000" target="_blank" 
+                 style="background: #0077cc; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;">
+                Open in Google Maps
+              </a>
+            </div>
+          </div>
+        `;
+      }
+    };
+  </script>
+
+  <style>
+    /* Contact Page Specific Styles */
+    .contact-info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin: 30px 0;
+    }
+    
+    .contact-methods {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    
+    .contact-method {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      transition: all 0.3s ease;
+      border: 1px solid transparent;
+    }
+    
+    .contact-method:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      border-color: #0077cc;
+    }
+    
+    .contact-icon {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      display: block;
+    }
+    
+    .contact-method h3 {
+      color: #0077cc;
+      margin-bottom: 10px;
+    }
+    
+    .contact-method button {
+      background: #0077cc;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background 0.3s;
+      font-size: 0.9rem;
+    }
+    
+    .contact-method button:hover {
+      background: #005fa3;
+      transform: none;
+    }
+    
+    .map-container {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+    
+    .contact-map {
+      height: 350px;
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin-bottom: 15px;
+      background: #e9ecef;
+    }
+    
+    .map-controls {
+      display: flex;
+      gap: 10px;
+      margin: 15px 0;
+      flex-wrap: wrap;
+    }
+    
+    .map-control-btn {
+      background: #0077cc;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background 0.3s;
+    }
+    
+    .map-control-btn:hover {
+      background: #005fa3;
+    }
+    
+    .map-info {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      border-left: 4px solid #0077cc;
+    }
+    
+    .map-info p {
+      margin: 5px 0;
+    }
+    
+    /* Enhanced Form Styles */
+    .enhanced-form .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    
+    .form-group {
+      position: relative;
+      margin-bottom: 20px;
+    }
+    
+    .error-message {
+      color: #dc3545;
+      font-size: 0.8rem;
+      margin-top: 5px;
+      display: block;
+    }
+    
+    input.error, textarea.error, select.error {
+      border-color: #dc3545;
+      background-color: #fff5f5;
+    }
+    
+    .char-counter {
+      text-align: right;
+      font-size: 0.8rem;
+      color: #666;
+      margin-top: 5px;
+    }
+    
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+    
+    .checkbox-label input {
+      margin-right: 10px;
+    }
+    
+    .form-actions {
+      display: flex;
+      gap: 15px;
+      margin-top: 25px;
+    }
+    
+    .submit-button, .reset-button {
+      padding: 12px 30px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .submit-button {
+      background: #0077cc;
+      color: white;
+    }
+    
+    .submit-button:disabled {
+      background: #6c757d;
+      cursor: not-allowed;
+      transform: none;
+    }
+    
+    .reset-button {
+      background: #6c757d;
+      color: white;
+    }
+    
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      animation: fadeIn 0.3s ease;
+    }
+    
+    .modal-content {
+      background-color: white;
+      margin: 15% auto;
+      padding: 30px;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      animation: slideDown 0.3s ease;
+    }
+    
+    .close-modal {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 24px;
+      cursor: pointer;
+      color: #666;
+    }
+    
+    .close-modal:hover {
+      color: #000;
+    }
+    
+    .modal-icon {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+    
+    .modal-button {
+      background: #0077cc;
+      color: white;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+    
+    /* Emergency Contact */
+    .emergency-contact {
+      background: #fff3cd;
+      border: 1px solid #ffeaa7;
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 30px;
+      text-align: center;
+    }
+    
+    .emergency-number {
+      margin-top: 15px;
+    }
+    
+    .emergency-number span {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #dc3545;
+      display: block;
+      margin-bottom: 10px;
+    }
+    
+    .emergency-call {
+      background: #dc3545;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    
+    .emergency-call:hover {
+      background: #c82333;
+    }
+    
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes slideDown {
+      from {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .contact-info-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .contact-methods {
+        grid-template-columns: 1fr;
+      }
+      
+      .enhanced-form .form-row {
+        grid-template-columns: 1fr;
+      }
+      
+      .form-actions {
+        flex-direction: column;
+      }
+      
+      .contact-map {
+        height: 300px;
+      }
+      
+      .map-controls {
+        flex-direction: column;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .contact-method {
+        padding: 15px;
+      }
+      
+      .modal-content {
+        margin: 10% auto;
+        padding: 20px;
+      }
+    }
+  </style>
+</body>
+</html>
